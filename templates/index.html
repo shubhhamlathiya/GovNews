@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>GovNews Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/app.min.css') }}">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/components.css') }}">
+    <!-- Custom style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/custom.css') }}">
+</head>
+
+<body>
+<!--<div class="loader"></div>-->
+<div id="app">
+    <div class="main-wrapper main-wrapper-1">
+        <div class="navbar-bg"></div>
+
+        <nav class="navbar navbar-expand-lg main-navbar sticky">
+            <div class="form-inline mr-auto">
+                <ul class="navbar-nav mr-3 text-decoration-none text-body">
+                    <li class="mr-5"><h2 class="pt-2"><span class="logo-name"
+                                                            style="color: rgba(90,130,255,0.94);">Gov</span>News</h2>
+                    </li>
+                    <li class="mr-3"><a href="/"><h5 class="pt-3" style="color: gray;">Home</h5></a></li>
+                    <li class="mr-3"><a href="/explore"><h5 class="pt-3" style="color: gray;">Explore</h5></a></li>
+                    <li class="mr-3"><a href="/trending"><h5 class="pt-3" style="color: gray;">Trending Now</h5></a>
+                    </li>
+                    <li class="mr-3"><a href="/newsfeeds"><h5 class="pt-3" style="color: gray;">News Feeds</h5></a></li>
+                </ul>
+            </div>
+            <ul class="navbar-nav navbar-right">
+                <li>
+                    <form class="form-inline mr-auto">
+                        <div class="search-element">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                                   data-width="200">
+                            <button class="btn" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </li>
+                <li>
+                    <a href="#" class="nav-link nav-link-lg fullscreen-btn">
+                        <i data-feather="maximize"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <section class="section">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-lg-12">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4>News chart</h4>
+                                <div class="card-header-action">
+                                    <div class="dropdown">
+                                        <a href="#" data-toggle="dropdown" class="btn btn-warning dropdown-toggle">Options</a>
+                                        <div class="dropdown-menu">
+                                            <a href="#" class="dropdown-item has-icon"><i class="fas fa-eye"></i>
+                                                View</a>
+                                            <a href="#" class="dropdown-item has-icon"><i class="far fa-edit"></i> Edit</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="#" class="dropdown-item has-icon text-danger"><i
+                                                    class="far fa-trash-alt"></i>
+                                                Delete</a>
+                                        </div>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">View All</a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div id="chart1"></div>
+                                        <div class="row mb-0">
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="list-inline text-center">
+                                                    <div class="list-inline-item p-r-30"><i
+                                                            data-feather="arrow-up-circle"
+                                                            class="col-green"></i>
+                                                        <h5 class="m-b-0">675</h5>
+                                                        <p class="text-muted font-14 m-b-0">Weekly News</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="list-inline text-center">
+                                                    <div class="list-inline-item p-r-30"><i
+                                                            data-feather="arrow-down-circle"
+                                                            class="col-orange"></i>
+                                                        <h5 class="m-b-0">1,587</h5>
+                                                        <p class="text-muted font-14 m-b-0">Monthly News</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                                                <div class="list-inline text-center">
+                                                    <div class="list-inline-item p-r-30"><i
+                                                            data-feather="arrow-up-circle"
+                                                            class="col-green"></i>
+                                                        <h5 class="mb-0 m-b-0">45,965</h5>
+                                                        <p class="text-muted font-14 m-b-0">Yearly News</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Chart</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart4" class="chartsh"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Chart</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="summary">
+                                    <div class="summary-chart active" data-tab-group="summary-tab" id="summary-chart">
+                                        <div id="chart3" class="chartsh"></div>
+                                    </div>
+                                    <div data-tab-group="summary-tab" id="summary-text">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Chart</h4>
+                            </div>
+                            <div class="card-body">
+                                <div id="chart2" class="chartsh"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- General JS Scripts -->
+<script src="{{ url_for('static', filename='assets/js/app.min.js') }}"></script>
+<!-- JS Libraies -->
+<script src="{{ url_for('static', filename='assets/bundles/apexcharts/apexcharts.min.js') }}"></script>
+<!-- Page Specific JS File -->
+<script src="{{ url_for('static', filename='assets/bundles/datatables/datatables.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/export-tables/dataTables.buttons.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/export-tables/buttons.flash.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/export-tables/jszip.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/export-tables/pdfmake.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/export-tables/vfs_fonts.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/bundles/datatables/export-tables/buttons.print.min.js') }}"></script>
+<script src="{{ url_for('static', filename='assets/js/page/index.js') }}"></script>
+<!-- Template JS File -->
+<script src="{{ url_for('static', filename='assets/js/scripts.js') }}"></script>
+<!-- Custom JS File -->
+<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+</body>
+</html>
